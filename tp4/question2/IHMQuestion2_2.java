@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+
 public class IHMQuestion2_2 extends JFrame {
 
     private JButton boutonA = new JButton("A");
@@ -29,20 +30,32 @@ public class IHMQuestion2_2 extends JFrame {
 
         // à compléter à l'identique de la question 2_1, (du copier/coller)...
         // le bouton A a 3 observateurs jbo1, jbo2 et jbo3
-
+        
+        boutonA.addMouseListener(new JMouseObserver("jmo1", contenu));
+        
+    
+       
         // le bouton B a 2 observateurs jbo1 et jbo2
-
+        boutonB.addMouseListener(new JMouseObserver("jmo2", contenu));
+       
+        
         // le bouton C a 1 observateur jbo1
-
+       boutonC.addMouseListener(new JMouseObserver("jmo3", contenu));
         // à compléter pour la question 2_2 (JMouseObserver)
             // le bouton A a 1 observateur jmo1
+        boutonA.addActionListener(new JButtonObserver("jbo1", contenu));
+       boutonA.addActionListener(new JButtonObserver("jbo2", contenu));
+       boutonA.addActionListener(new JButtonObserver("jbo3", contenu));
             // le bouton B a 1 observateur jmo2
+             boutonB.addActionListener(new JButtonObserver("jbo1", contenu));
+             boutonB.addActionListener(new JButtonObserver("jbo2", contenu));
             // le bouton C a 1 observateur jmo3
+             boutonC.addActionListener(new JButtonObserver("jbo1", contenu));
         
     }
     
      public static void main(String[] args){
-        new IHMQuestion2_1();
+       // new IHMQuestion2_1();
         new IHMQuestion2_2();
     }
 

@@ -86,4 +86,52 @@ public class PatternObservateur extends junit.framework.TestCase {
         assertTrue(l2.countObservers() == 0);
     }
     
+
+    public void test()
+    {
+        question1.ConcreteSubject c1 = new question1.ConcreteSubject();
+        question1.ConcreteObserver c2 = new question1.ConcreteObserver();
+        assertEquals(1, c2.arguments());
+        assertEquals(1, c2.senders());
+        c2.update(c1, "life in lebonon it too hard");
+        assertEquals(1, c1.countObservers());
+        assertEquals(1, c2.senders());
+        c1.addObserver(c2);
+        assertEquals(1, c1.countObservers());
+    }
+
+    public void tests()
+    {
+        question1.ConcreteSubject c1 = new question1.ConcreteSubject();
+        question1.ConcreteObserver c2 = new question1.ConcreteObserver();
+        assertEquals(1, c2.arguments());
+        assertEquals(1, c2.senders());
+        c1.addObserver(c2);
+        c2.update(c1, "life too hard");
+        assertEquals(2, c2.arguments());
+        assertEquals(1, c2.senders());
+    }
+
+    public void testr()
+    {
+        question1.ConcreteSubject l2 = new question1.ConcreteSubject();
+        question1.ConcreteObserver l1 = new question1.ConcreteObserver();
+        l2.insert("shaza");
+        l1.update(l2, "life hard in lebanon");
+        assertEquals(1, l2.toString());
+        l2.addObserver(l1);
+        assertEquals(1, l2.countObservers());
+        assertEquals(1, l2.equals(l1));
+        assertEquals(1, l2.toString());
+        l2.notifyObservers(l1);
+        java.util.Stack<java.lang.Object> stack1 = l1.arguments();
+        assertEquals(1, stack1);
+        assertEquals(1, stack1.pop());
+        assertEquals(1, stack1.push("shaza"));
+        assertEquals(1, l2.equals(l1));
+        assertEquals(1, l1.senders());
+    }
 }
+
+
+

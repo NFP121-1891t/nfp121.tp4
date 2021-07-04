@@ -122,4 +122,18 @@ public class IHMQuestion2_1Test extends junit.framework.TestCase
         robot.delay(60);
     }//end mouseMoveAndClick
 
+
+  
+    public void test()
+    {
+        question2.IHMQuestion2_1 iHMQuest1 = new question2.IHMQuestion2_1();
+    }
+
+    public void testquestion2_2()
+    {
+        question2.IHMQuestion2_2.main({ });
+    }
 }
+
+
+
